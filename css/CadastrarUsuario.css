@@ -1,0 +1,75 @@
+body
+	{
+		width: 5751px;
+		height: 3801px;
+		position: fixed;
+		margin-top: 0px;	
+		background-color: white;
+	}
+
+.btnSalva
+	{
+		background-color:#000 ;
+		color: white;
+		text-decoration: none;
+	 	border-radius: 2px;
+	 	border-width: 0.3px;
+	 	border: none;
+	 	width: 120px;
+	 	height:  35px;
+	 	margin-top: 20px;
+	}
+
+.nav
+{
+	background-color: #000;
+	width: 100%
+	height: 15px;
+}
+
+.left
+{
+float: left;
+}
+
+.right
+{
+float: right;
+}
+.field
+	{
+
+ border: none;
+height: 100%;
+float: left;
+padding-left: 2rem;
+padding-right: 2rem;
+background-color: white;
+width: 640px;
+padding-bottom: 2rem;
+padding-top: 2rem;
+font-family: Arial Narrow, sans-serif;
+font-weight: bold;
+margin-left: 5rem;
+
+}
+
+.parte2
+{
+float: right;
+margin-right: 4624px;
+background-color: #000;
+opacity: 0.8;
+height: 30.1rem;
+color: white;
+
+}
+.h2
+{
+	font-family: Arial Narrow, sans-serif;
+	font-weight: bold;
+	color: #000;
+}
+.label{
+	color: #8B8989;
+}

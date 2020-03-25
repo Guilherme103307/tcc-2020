@@ -1,0 +1,46 @@
+body
+	{
+		width: 5751px;
+		height: 3801px;
+		position: fixed;
+		background-image: url('../imagens/planoFundo.jpg');
+
+
+		
+	}
+
+.field
+	{
+		width: 18rem;
+		margin-left: 32rem;
+		margin-top: 10rem;
+   		background-color: white;
+   		border: none;
+   		border-radius: 1rem;
+
+	}
+	.btnEnviar
+	{
+		background-color:#000 ;
+		color: white;
+		text-decoration: none;
+	 	border-radius: 2px;
+	 	border-width: 0.3px;
+	 	border: none;
+	 	width: 150px;
+	 	height:  35px;
+	 	margin-left: 135px;
+	}
+	.form
+	{
+		margin-left: 30rem;
+		margin-top: 0px;
+		color: white;
+
+	}
+	.logo
+
+	{
+		font-family: Bebas Neue, sans-serif;
+		font-style: bold;
+	}
