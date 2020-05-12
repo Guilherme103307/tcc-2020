@@ -1,0 +1,108 @@
+body
+	{
+		margin: 0;
+		background-color: #FFF5EE;
+		overflow: none;
+
+	}
+
+.esquerda
+	{
+		float: left;
+		width: 50%;
+		padding-bottom: -50px;
+		background-color: #FFF5EE;
+		align-items: center;
+ 		justify-content: center;
+ 		position: relative;
+
+	}
+
+.direita
+ 
+	{
+		background-image: url('../imagens/fundo1.jpg');
+    	background-repeat: no-repeat;
+    	background-size:100%;
+    	bottom: -50%;
+    	color: white;
+    	height: 100%;
+    	width: 50%;
+   		top: 0;
+   		float: right;
+		background-image: url('../imagens/plano2.jpg');
+		
+	}
+.left
+{
+float: left;
+background-color: #FFF5EE;
+}
+
+.right
+{
+float: right;
+background-color: #FFF5EE;
+}
+.field
+	{
+
+	border: none;
+	height: 100%;
+	float: left;
+	padding-left: 2rem;
+	padding-right: 2rem;
+	width: 100%;
+	background-color: #FFF5EE;
+	font-family: Arial Narrow, sans-serif;
+	font-weight: bold;
+
+}
+.btn
+	{
+	background-color:#000 ;
+	color: white;
+	text-decoration: none;
+	 border-radius: 2px;
+	 border-width: 0.3px;
+	 border: none;
+	 width: 150px;
+	 height:  35px;
+	 margin-left: 25%;
+ 	margin-bottom: 15%;
+	}
+
+input[type=text]{
+background-color: #FFF5EE;
+}
+
+input[type=password]{
+background-color: #FFF5EE;
+}
+.h1
+{
+	color: white;
+	font-family: 'Biryani', sans-serif;
+	font-size: 40px;
+	text-shadow: 2px -2px 10px black;
+	display: flex;
+  	align-items: center;
+ 	justify-content: center;
+ 	position: relative;
+ 	margin-top: 40%;
+}
+.h3
+{
+
+	
+	color: white;
+	font-family: 'arial', sans-serif;
+	text-align: center;
+	text-shadow: 2px -2px 10px black;
+	display: flex;
+  	align-items: center;
+ 	justify-content: center;
+ 	position: relative;
+ 	top: 20%;
+ 	font-size: 12px;
+}
