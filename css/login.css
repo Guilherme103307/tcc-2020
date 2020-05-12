@@ -1,24 +1,22 @@
-body
-	{
-		width: 5751px;
-		height: 3801px;
-		position: fixed;
-		background-image: url('../imagens/planoFundo.jpg');
+.login-page
+{
+    background-image: url('../imagens/fundo2.jpg');
+    background-repeat: no-repeat;
+    background-size:100%;
+    bottom: 0;
+    color: white;
+    text-shadow: 2px -2px 10px black;
+    left: 0;
+    overflow: auto;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+
+}
 
 
-		
-	}
 
-.field
-	{
-		width: 18rem;
-		margin-left: 32rem;
-		margin-top: 10rem;
-   		background-color: white;
-   		border: none;
-   		border-radius: 1rem;
-
-	}
 	.btnEnviar
 	{
 		background-color:#000 ;
@@ -29,14 +27,6 @@ body
 	 	border: none;
 	 	width: 150px;
 	 	height:  35px;
-	 	margin-left: 135px;
-	}
-	.form
-	{
-		margin-left: 30rem;
-		margin-top: 0px;
-		color: white;
-
 	}
 	.logo
 
@@ -44,3 +34,10 @@ body
 		font-family: Bebas Neue, sans-serif;
 		font-style: bold;
 	}
+.flex-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+}
