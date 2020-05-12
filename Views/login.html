@@ -1,6 +1,4 @@
-<?php
-	session_start();
-?><!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 	<title>LOGIN</title>
@@ -9,22 +7,22 @@
 	<link rel="stylesheet" type="text/css" href="../css/login.css">
 </head>
 <body>
-	 <div class="form">
-
+	 <div class="login-page">
+	 	<div class="flex-box">
 		<form  method="POST" action="../Controllers/valida.php?acao=logar">
-				<img src="../Imagens/logo.png" style="width: 8rem;  margin-top: 120px; margin-left: 9rem;">
+	 <img src="../Imagens/logo.png" style="width: 8rem; margin-top: 25%">
 			
-        	<h2 style="margin-top: 10px; margin-left: 50px"   >Entre ou Cadastre-se</h2>
+        	<h2 style="margin-top: 10px; "   >Entre ou Cadastre-se</h2>
 
-        	<div>
+        	<div >
 	 		 	<br>
-	  		 	<label for="exampleInputEmail1">Email </label>
-	  		  	<input type="email"  name="email"class="form-control" placeholder="Endereço de E-mail" style="width: 420px;" id="email">
+	  		 	<label  for="exampleInputEmail1" style="margin-left: -24rem">Email </label>
+	  		  	<input type="email"  name="email"class="form-control" placeholder="exemplo@gmail.com" style="width: 420px;" id="email">
 	 		 </div>
 
        		<div>
 	 		 	<br>
-	  		 	<label for="exampleInputEmail1">Senha</label>
+	  		 	<label for="exampleInputEmail1" style="margin-left: -24rem">Senha</label>
 	  		  	<input type="password" name="senha" class="form-control" placeholder="Senha" style="width: 420px;" id="senha">
 	 		 </div>
 
@@ -49,8 +47,10 @@
 			}
 			?>
 		</p>
-
-		<label style="margin-left: 80px">Não Possui uma Conta? <a href="../Views/CarregarIMG.php"> Cadastre-se</a></label>
+		<br>
+		</div>
+		<br>
+		 <label class="flex-box">Não Possui uma Conta? <a href="../Views/CadastrarUsuario.html"> Cadastre-se</a></label>
 
 
     </div>
