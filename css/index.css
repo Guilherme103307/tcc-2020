@@ -14,7 +14,7 @@ body
 
 .banner
 {
-	background-image: url('fundo1.jpg');
+	background-image: url('../imagens/fundo1.jpg');
     background-repeat: no-repeat;
     background-size:100%;
     bottom: 0;
