@@ -10,7 +10,44 @@ CREATE TABLE Usuario (
   CONSTRAINT pk_idUsuario_Usuario PRIMARY KEY (idUsuario)
 );
 
- 
-INSERT INTO `usuario` (`idUsuario`, `nome`, `email`, `senha`, `uf`, `cidade`, `nacionalidade`, `NomeIMG´) VALUES
-(1, 'Guilherme Olimpio dos Santos', 'gui@gmail.com', 'saopedro', '', 'Formiga', 'Brasileiro', 'bazar1.png'),
-(2, 'Jhenifer Maria Cristina', 'j@gmail.com', 'saopedro', '', 'New York', 'Americano', 'bazar2.png');
+
+
+CREATE TABLE  Mensagens (
+  idMensagens INT NOT NULL auto_increment,
+  idRemetente INT NOT NULL,
+  idDestinatario INT NULL,
+  texto VARCHAR(255) NULL,
+  data DATE NULL,
+  horario TIME(6) NULL,
+  CONSTRAINT pk_idMensagens PRIMARY KEY (idMensagens),
+  CONSTRAINT fk_Mensagens_Usuario 
+    FOREIGN KEY (idRemetente)
+    REFERENCES Usuario (idUsuario)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE);
+
+CREATE TABLE  Solicitacoes_de_Amizade (
+  idAmizade INT NOT NULL auto_increment,
+  idRemetente INT NOT NULL,
+  idDestinatario INT NULL,
+  status VARCHAR(45) NULL,
+  CONSTRAINT pk_idAmizade PRIMARY KEY (idAmizade),
+  CONSTRAINT fk_Solicitacoes_de_Amizade_Usuario1
+    FOREIGN KEY (idRemetente)
+    REFERENCES Usuario (idUsuario)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE);
+
+CREATE TABLE  VideoCall (
+  idVideoCall INT NOT NULL auto_increment,
+  idRemetente INT NOT NULL,
+  idDestinatario INT NULL,
+  date DATE NULL,
+  horario TIME(6) NULL,
+  CONSTRAINT pk_idVideoCall PRIMARY KEY (idVideoCall),
+  CONSTRAINT fk_VideoCall_Usuario1
+    FOREIGN KEY (idRemetente)
+    REFERENCES Usuario (idUsuario)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE);
+
