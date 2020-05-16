@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<?php
+	session_start();
+?><!DOCTYPE html>
 <html>
 <head>
 	<title>LOGIN</title>
@@ -12,7 +14,7 @@
 		<form  method="POST" action="../Controllers/valida.php?acao=logar">
 	 <img src="../Imagens/logo.png" style="width: 8rem; margin-top: 25%">
 			
-        	<h2 style="margin-top: 10px; "   >Entre ou Cadastre-se</h2>
+        	<h2 style="margin-top: 10px; "   >Login</h2>
 
         	<div >
 	 		 	<br>
@@ -23,7 +25,8 @@
        		<div>
 	 		 	<br>
 	  		 	<label for="exampleInputEmail1" style="margin-left: -24rem">Senha</label>
-	  		  	<input type="password" name="senha" class="form-control" placeholder="Senha" style="width: 420px;" id="senha">
+	  		  	<input type="text" name="senha" class="form-control" placeholder="Senha" style="width: 420px;" id="senha">
+	  		  <a href="../Views/alterasenha.php" style="margin-left: 5%;">Esqueceu sua Senha? </a>
 	 		 </div>
 
         	<div>
@@ -50,7 +53,7 @@
 		<br>
 		</div>
 		<br>
-		 <label class="flex-box">Não Possui uma Conta? <a href="../Views/CadastrarUsuario.html"> Cadastre-se</a></label>
+		 <label class="flex-box">Não Possui uma Conta? <a href="../Views/CarregarIMG.php"> Cadastre-se</a></label>
 
 
     </div>
