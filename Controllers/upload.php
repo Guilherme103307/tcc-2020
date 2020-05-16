@@ -29,7 +29,7 @@
 			$extensao = strtolower(end(explode('.', $_FILES['arquivo']['name'])));
 			if(array_search($extensao, $_UP['extensoes'])=== false){		
 				echo "
-					<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=http://localhost/Freely buy/Views/CarregarImg.php'>
+					<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=http://localhost/poc-ingles/Views/CadastrarUsuario.php'>
 					<script type=\"text/javascript\">
 						alert(\"A imagem não foi cadastrada extesão inválida.\");
 					</script>
@@ -38,7 +38,7 @@
 			
 			else if ($_UP['tamanho'] < $_FILES['arquivo']['size']){
 				echo "
-					<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=http://localhost/Freely buy/Views/CarregarImg.php'>
+					<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=http://localhost/poc-ingles/Views/CadastrarUsuario.php'>
 					<script type=\"text/javascript\">
 						alert(\"Arquivo muito grande.\");
 					</script>
@@ -70,7 +70,7 @@
 				}else{
 				
 					echo "
-						<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=http://localhost/Freely buy/Views/CarregarImg.php'>
+						<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=http://localhost/poc-ingles/Views/CadastrarUsuario.php'>
 						<script type=\"text/javascript\">
 							alert(\"Imagem não foi cadastrada com Sucesso.\");
 						</script>
