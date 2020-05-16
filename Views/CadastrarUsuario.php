@@ -1,3 +1,6 @@
+	<?php 
+		include_once ("../Controllers/conexao.php");
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,22 +15,18 @@
 
 
 	<div class="esquerda">
-	<?php 
-		 	$id = $_GET['id'];  
+		<?php
+			$id = $_GET['id'];  
 		?>
+		<img src ="../foto/<?php echo $id; ?>" class="img"  />
 
-			<img src ="../imagens/sem_perfil.png ?>" 
-			style="width: 200px;
-    			   height: 200px;
-    			   border-radius: 200px;
-    			   margin-top: 5%;
-    			   margin-left: 32%;"
-			> 
+
+	
 	
     	<fieldset class="field">
 			<form action="../Controllers/controle_usuario.php?acao=inserir" method="POST">
 				<input  type="hidden" id="imagem" name="imagem" autofocus="" display= "inline"  value="<?php echo $id; ?>">
-			<h2 class="h2">REGISTRE-SE</h2>
+			<h2 class="h2">Cadastre-se</h2>
 				
 			<div> 
 				<label class="label">NOME</label>
@@ -103,12 +102,8 @@
 			<div>
 
 				<h3 class="h3" style="font-size: 20px; text-align: center; margin-left: 15%; width: 80%;">Pratique seu segundo idioma com um estrangeiro, conheça mais sobre a cultura e os custumes e ainda faça novos amigos. </h3>
-				<br>
-				<h4 class="h4"  style="font-size: 15px; text-align: center; margin-left: 10%;"> Já Possui uma Conta?<h4>
-					
-			<a href="login.php" > 
-				 <button class="btn btn-primary " style="background-color: #000; margin-left: 45%; border: none; margin-bottom: 35%;">Entre  </button>
-			 </a>
+				<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+			
 			</div>
 		</div>
 		
