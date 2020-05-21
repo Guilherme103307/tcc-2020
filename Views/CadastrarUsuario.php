@@ -1,4 +1,4 @@
-	<?php 
+<?php 
 		include_once ("../Controllers/conexao.php");
  ?>
 <!DOCTYPE html>
@@ -69,6 +69,12 @@
 
 				<label class="label">SENHA</label>
 				<input type="password" name="senha" id="senha" placeholder="minimo 8 caractries" class="form-control" style="width: 280px; margin-top: -10px; margin-right: 30px;"  >
+				<br>
+			</div>
+			<div> 
+				<br>
+				<label class="label">DESCRIÇÃO</label>
+				<input type="text" name="descricao" id="descricao" autofocus="" class="form-control" style="width: 580px; margin-top: -10px; height: 100px;" placeholder="Ex: Sua Profissão, idade, coisas que gosta de fazer no tempo livre, hobbies, etc;"> 
 				<br>
 			</div>
 			<div>
