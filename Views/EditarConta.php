@@ -17,7 +17,7 @@
 
   <form action="../Controllers/editUsuario.php" method="POST">
  <div class="principal">
-  <input  type="hidden" id="idUsuario" name="idUsuario" autofocus="" display= "inline"  value="<?php echo $_SESSION['idUsuario']  ?>">
+  <input  type="hidden" id="idUsuario" name="idUsuario" autofocus="" display= "inline"  value="<?php echo $_SESSION['idusuario']  ?>">
     <div style="margin-left: 15%;   ">
       <div>
       <label>Nome:</label>
