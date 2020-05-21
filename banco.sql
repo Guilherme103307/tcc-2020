@@ -7,9 +7,11 @@ CREATE TABLE Usuario (
   cidade VARCHAR(45) NOT NULL,
   nacionalidade VARCHAR(45) NOT NULL,
   NomeImg varchar(45),
+  descricao varchar(300),
   CONSTRAINT pk_idUsuario_Usuario PRIMARY KEY (idUsuario)
 );
 
+ 
 
 
 CREATE TABLE  Mensagens (
