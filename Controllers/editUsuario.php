@@ -1,7 +1,7 @@
 <?php 
 session_start();include_once ("../Controllers/conexao.php");
 
-$id = filter_input(INPUT_POST, 'idUsuario');
+$id = $_SESSION['idUsuario'];
 $nome = filter_input(INPUT_POST, 'nome');
 $email = filter_input(INPUT_POST, 'email');
 $uf = filter_input(INPUT_POST, 'uf');
@@ -10,7 +10,7 @@ $nacionalidade = filter_input(INPUT_POST, 'nacionalidade');
 $senha = filter_input(INPUT_POST, 'senha');
 
 
-			
+	
 $sql="update usuario ";
 $sql.= "set nome= '".$nome."
 
@@ -20,6 +20,15 @@ $sql.= "set nome= '".$nome."
 $sql.="where idUsuario='$id';";
 		mysqli_query($conexao, $sql);
 
-			echo $sql;
+	
+
+					$_SESSION['idUsuario'] =$id;
+					$_SESSION['nome'] = $nome;
+					$_SESSION['email'] = $email;
+					$_SESSION['nacionalidade'] = $nacionalidade;
+					$_SESSION['uf'] = $uf;
+					$_SESSION['cidade'] = $cidade;
+					$_SESSION['senha'] = $senha;
+					$_SESSION['descricao'] = $descricao;
 header("Location: ../Views/conta.php");
 			?>
