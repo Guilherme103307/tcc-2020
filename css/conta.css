@@ -1,0 +1,61 @@
+body
+{
+	margin: 0;
+	padding: 0;
+}
+.principal
+{
+	bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex; 
+	align-items:
+	center; justify-content: center;
+	
+}
+.rodape
+{
+margin-left: 20%;
+position: absolute;
+bottom: 15%;
+display: inline;
+}
+.btn1
+	{
+	
+		width: 200px;
+ 		height: 35px;
+   		background-color: #FA8072; 
+ 		border: none;
+ 		float: left;
+ 		margin-left: 43%;
+		position: absolute;
+		bottom: 15%;	
+
+ 		
+	}
+.btn1:hover
+{
+	background-color:#FF6347;
+}
+
+.btn2
+	{		
+   		background-color: #FA8072; 
+   		background-repeat: no-repeat;
+   		border: none;
+ 		width: 200px;
+ 		height: 35px;
+		margin-left: 58%;
+		bottom: 15%;
+		float: right;
+		position: fixed;
+ 		
+
+	}
+.btn2:hover
+{
+	background-color:#FF6347;
+}
