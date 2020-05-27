@@ -6,6 +6,9 @@
 	$status = "Pendente";
 
 	$sql="INSERT INTO Solicitacoes_de_Amizade (idRemetente, idDestinatario, status) VALUES ('$id_convite' , '$id_convidado', '$status');";
-	echo $sql;
+	
+
 	mysqli_query($conexao, $sql);
+	$_SESSION['msg'] = "<p style='color:green;'>Solicitação Enviada!</p>";
+		header("Location: ../views/amigos.php#Adicionar");
 ?>
