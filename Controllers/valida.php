@@ -15,26 +15,26 @@ include_once('conexao.php');
 
 			
 
-			if ($tipo == "Americano") {
+				if ($tipo == "Americano") {
 					if(isset($row)){
-				session_start();
+					session_start();
 
-				$_SESSION['id']= $tipo;
+					$_SESSION['id']= $tipo;
 
+					
+						$_SESSION['idUsuario'] = $row['idUsuario'];
+						$_SESSION['nome'] = $row['nome'];
+						$_SESSION['email'] = $row['email'];
+						$_SESSION['nacionalidade'] = $row['nacionalidade'];
+						$_SESSION['uf'] = $row['uf'];
+						$_SESSION['cidade'] = $row['cidade'];
+						$_SESSION['senha'] = $row['senha'];
+						$_SESSION['NomeIMG'] = $row['NomeImg'];
+
+						header("Location: ../Views/HomeA.php");
+					}
 				
-					$_SESSION['idUsuario'] = $row['idUsuario'];
-					$_SESSION['nome'] = $row['nome'];
-					$_SESSION['email'] = $row['email'];
-					$_SESSION['nacionalidade'] = $row['nacionalidade'];
-					$_SESSION['uf'] = $row['uf'];
-					$_SESSION['cidade'] = $row['cidade'];
-					$_SESSION['senha'] = $row['senha'];
-					$_SESSION['NomeIMG'] = $row['NomeImg'];
-
-					header("Location: ../Views/HomeA.php");
-				}
-				
-			} else if ($tipo== "Brasileiro") {
+				} else if ($tipo== "Brasileiro") {
 					if(isset($row)){
 					session_start();
 				
@@ -52,23 +52,16 @@ include_once('conexao.php');
 				}}
 			
 
-			 else {
-				header("Location: ../Views/Login.php?login=erro");
-			}
-				}else{	
+			 	else if (!isset($row)){
+			 		session_start();
+				 	$_SESSION['msg'] = "<p style='color:red;'>Usuário ou Senha Incorretos!!</p>";
+					header("Location: ../Views/Login.php");
+				}
+				
 			
-			$_SESSION['loginErro'] = "Usuário ou senha Inválido";
-			header("Location: ../Views/login.php");
-		}
-	
-}	else{
-		$_SESSION['loginErro'] = "Usuário ou senha inválidooo";
-		header("Location: ../Views/login.php");
-	
-}
 		
-
-	
+		}
+	}
 
 
 
