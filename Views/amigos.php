@@ -155,7 +155,16 @@
 <div id="Adicionar" role="tabpanel" class="tab-pane active">
 
   <div class="principal">
- 
+ <div style="bottom: 2%;text-shadow: 2px -2px 10px black; font-size:20px;color: white; margin-left: 45%;"><?php
+      if(isset($_SESSION['msg'])){?>
+    
+        <?php
+
+        echo $_SESSION['msg'];
+        unset($_SESSION['msg']);
+
+      }?>
+      </div>
  <br><br>
        <div style="margin-left: 50%">
     <?php
