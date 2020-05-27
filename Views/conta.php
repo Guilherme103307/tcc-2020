@@ -6,16 +6,21 @@
   <head>
     <title>HEAVEN</title>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="../css/conta.css">
   	<link href="https://fonts.googleapis.com/css2?family=Biryani:wght@800&display=swap" rel="stylesheet">  
 	<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300&display=swap" rel="stylesheet"> 
+
   </head>
   <body>
   <?php include_once("Header.php") ?>
-  
+   
+    
+     
  <div class="principal">
     <div style="margin-left: 15%;   ">
+
       <div>
       <label>Nome:</label>
       <br>
@@ -66,16 +71,28 @@
     </form>
   </div>
 
-      <form action="../Controllers/apagarconta.php" method="POST">
-        <button class="btn2" name="delete" value="<?php echo $_SESSION['idUsuario'] ?>">Apagar Conta</button>
-        <br><br>        
-      </form>
-    </div>
-
-
-    </div>      
   
-  </div>
-</div>
+        <?php
+        echo "<a href='proc_apagar_usuario.php?id=" . $_SESSION['idUsuario'] ." 'class='btn2' style='text-decoration: none;color: inherit;'data-confirm='Tem certeza de que deseja excluir o item selecionado?'>Apagar</a><br>";
+        ?>
+        <br><br>        
+
+         <div style="bottom: 2%; margin-left: 45%"><?php
+      if(isset($_SESSION['msg'])){?>
+        <br> <br><br><br><br> <br><br><br> <br> <br><br><br><br> <br><br><br>
+        <?php
+
+        echo $_SESSION['msg'];
+        unset($_SESSION['msg']);
+
+      }?>
+      </div>
+
+ 
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <script src="../js/personalizado.js"></script>   
+  
 </body>
 </html>
