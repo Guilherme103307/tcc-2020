@@ -37,8 +37,10 @@
       <input type="password" name="senha"  value="<?php echo $_SESSION['senha'] ?>" id="senha" class="form-control" style="width: 420px">
       <br> 
     </div>  
+    <label>Descrição:</label>
   </div>
-    <div style="float: right; margin-left: 2%;">
+
+    <div style="float: right; margin-left: 2%; margin-top: -2.4%;">
      <div>
       <label>UF</label>
       <br>
@@ -57,6 +59,12 @@
       <input type="text" name="nacionalidade"  value="<?php echo $_SESSION['nacionalidade'] ?>" id="nacionalidade" class="form-control" style="width: 420px">
       <br> 
     </div>
+     <div class="desc">
+   
+      <textarea class="form-control" rows="5" type="text" name="descricao"   id="Descrição" style="width: 865px; height: 80px; "><?php echo $_SESSION['descricao'] ?></textarea>
+      <br> 
+    </div>
+  </div>
     
   
     </div>
