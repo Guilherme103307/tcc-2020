@@ -9,12 +9,27 @@ body
     left: 0;
     position: absolute;
     right: 0;
-    top: 0;
+    top: -10%;
     display: flex; 
 	align-items:
 	center; justify-content: center;
 	
 }
+.desc
+
+	{
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 72%;
+    display: flex; 
+	justify-content: center;
+	margin-left: 15%;
+	margin-right: 0%;
+	
+
+}
+
 .rodape
 {
 margin-left: 20%;
@@ -32,7 +47,7 @@ display: inline;
  		float: left;
  		margin-left: 43%;
 		position: absolute;
-		bottom: 15%;
+		bottom: 10%;
 		font-family: Arial, Helvetica, sans-serif;
 		font-size: 15px;
 		color: inherit;
@@ -52,7 +67,7 @@ display: inline;
  		width: 200px;
  		height: 35px;
 		margin-left: 58%;
-		bottom: 15%;
+		bottom: 10%;
 		float: right;
 		position: fixed;
 		text-align: center;
