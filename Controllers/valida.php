@@ -30,6 +30,8 @@ include_once('conexao.php');
 						$_SESSION['cidade'] = $row['cidade'];
 						$_SESSION['senha'] = $row['senha'];
 						$_SESSION['NomeIMG'] = $row['NomeImg'];
+						$_SESSION['descricao'] = $row['descricao'];
+
 
 						header("Location: ../Views/HomeA.php");
 					}
@@ -46,6 +48,7 @@ include_once('conexao.php');
 					$_SESSION['cidade'] = $row['cidade'];
 					$_SESSION['senha'] = $row['senha'];
 					$_SESSION['NomeIMG'] = $row['NomeImg'];
+					$_SESSION['descricao'] = $row['descricao'];
 
 
 					header("Location: ../Views/HomeB.php");
@@ -67,3 +70,4 @@ include_once('conexao.php');
 
 
 ?>
+
