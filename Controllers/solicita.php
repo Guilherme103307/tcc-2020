@@ -9,6 +9,5 @@
 	
 
 	mysqli_query($conexao, $sql);
-	$_SESSION['msg'] = "<p style='color:green;'>Solicitação Enviada!</p>";
-		header("Location: ../views/amigos.php#Adicionar");
+		header("Location: ../views/adicionar.php");
 ?>
