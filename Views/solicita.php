@@ -87,12 +87,9 @@
         echo "<a href='../Controllers/status.php?id=" . $id_convite ."&status=1'class='btn1' style='text-decoration: none;color: inherit; text-align: center; padding-top: 0.5%;'data-confirm='Tem certeza de que deseja excluir o item selecionado?'>Aceitar Solicitação</a><br>";
         ?>
 
-          <form method="POST" action="../Controllers/status.php?status= 0">
-            <input  type="hidden" id="convite" name="convite" autofocus="" display= "inline"  value="<?php echo $id_convite ?>">
-             <button class="btn2" name="aceitar" type="submit">
-             Recusar Solicitação </button>
-             <br>
-          </form>
+          <?php
+        echo "<a href='../Controllers/status.php?id=" . $id_convite ."&status=0'class='btn2' style='text-decoration: none;color: inherit; text-align: center; padding-top: 0.5%;'>Recusar Solicitação</a><br>";
+        ?>
         </div>
 
   <br><br>
