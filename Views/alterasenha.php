@@ -24,7 +24,7 @@
 	 		 	<br>
 			<label for="exampleInputEmail1" >Uma nova senha será enviada para o seu Email</label>
 			<br>
-	  		 <input type="email"  name="email" placeholder="exemplo@gmail.com" style="width: 420px;" id="email">
+	  		 <input type="email"  name="email" placeholder="exemplo@gmail.com" style="width: 420px; height: 40px; border-radius: 8px; padding-left: 20px" id="email">
 		 	</div>
 		<br><br>
 			<input type="submit" name="ok" value="ok" class="btnEnviar">
