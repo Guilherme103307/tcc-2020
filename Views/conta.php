@@ -39,28 +39,34 @@
       <input type="password" name="senha" readonly="" value="<?php echo $_SESSION['senha'] ?>" id="senha" class="form-control" style="width: 420px">
       <br> 
     </div>  
+    <label>Descrição:</label>
   </div>
-    <div style="float: right; margin-left: 2%;">
+    <div style="float: right; margin-left: 2%; margin-top: -2.4%">
      <div>
-      <label>UF</label>
+      <label>UF:</label>
       <br>
       <input type="text" name="uf" readonly="" value="<?php echo $_SESSION['uf'] ?>" id="uf" class="form-control" style="width: 420px">
       <br> 
     </div>
     <div>
-      <label>Cidade</label>
+      <label>Cidade:</label>
       <br>
       <input type="text" name="cidade" readonly="" value="<?php echo $_SESSION['cidade'] ?>" id="cidade" class="form-control" style="width: 420px">
       <br> 
     </div>
     <div>
-      <label>Nacionalidade</label>
+      <label>Nacionalidade:</label>
       <br>
       <input type="text" name="Nacionalidade" readonly="" value="<?php echo $_SESSION['nacionalidade'] ?>" id="nacionalidade" class="form-control" style="width: 420px">
       <br> 
     </div>
     
   
+    </div>
+  
+  <div class="desc">
+      <textarea class="form-control" rows="5" type="text" name="Descrição" readonly=""  id="Descrição" style="width: 865px; height: 80px; "><?php echo $_SESSION['descricao'] ?></textarea>
+      <br> 
     </div>
   </div>
 <br> <br> <br><br><br>
@@ -77,9 +83,9 @@
         ?>
         <br><br>        
 
-         <div style="bottom: 2%; margin-left: 45%"><?php
+         <div style="bottom: 1%; margin-left: 45%"><?php
       if(isset($_SESSION['msg'])){?>
-        <br> <br><br><br><br> <br><br><br> <br> <br><br><br><br> <br><br><br>
+        <br> <br><br><br><br> <br><br><br> <br> <br><br><br><br> <br><br><br><br><br> <br><br><br>
         <?php
 
         echo $_SESSION['msg'];
