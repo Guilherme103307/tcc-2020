@@ -43,7 +43,7 @@ margin-left: 10%;
 }
 .photo1
 {
-  margin-top: 2%;
+  margin-top: 0%;
   margin-left:20%;
   border-radius: 200px;
   width: 50px;
@@ -55,6 +55,7 @@ margin-left: 10%;
 }
 .content1
 {
+  margin-top: 5%;
   padding-left: 38%;
   margin-top: -28%;
   padding-right: 10%;
@@ -62,7 +63,7 @@ margin-left: 10%;
 }
 .content
 {
-  margin-top: -3%;
+  margin-top: 2%;
   padding-left: 32%;
   padding-right: 10%;
   text-align: justify;
@@ -70,7 +71,7 @@ margin-left: 10%;
 .content2
 {
   padding-left: 38%;
-  margin-top: -28%;
+  margin-top: -25%;
   padding-right: 10%;
   text-align: justify;
 }
