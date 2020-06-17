@@ -2,6 +2,7 @@
 	if (!isset($_SESSION)) session_start();
   include_once('../Controllers/conexao.php');
   $Nome = $_SESSION['nome'];
+  $teste = '';
  ?>
 <!DOCTYPE html>
 <html>
@@ -56,16 +57,21 @@
 }
           
      
-            if (isset($id_pesquisa)){  ?>
+            if (isset($id_pesquisa)){ 
+            if ($teste != $nome_pesquisa) {
+               
+            ?>
             <div class="contato">
                 <div class="photo"><img src="../foto/<?php echo $img_pesquisa?>" class="photo"></div>
                 <div class="header"> <?php echo $nome_pesquisa?> </div>
-
+                <?php $teste = $nome_pesquisa; } ?>
             </div>
 
-    <?php }}?>
+    <?php
+      }}?>
    
       </div>
+    
  
       <div class="mensagens">
         teste2
