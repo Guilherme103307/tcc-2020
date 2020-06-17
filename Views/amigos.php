@@ -1,6 +1,7 @@
 <?php 
 	if (!isset($_SESSION)) session_start();
 $Nome = $_SESSION['nome'];
+  $teste = '';
  ?>
 <!DOCTYPE html>
 <html>
@@ -42,96 +43,61 @@ $Nome = $_SESSION['nome'];
  <div class="tab-content">
      <div class="principal">
       <br><br><br>
-        <div class="principal" >
-     <div style="bottom: 2%;text-shadow: 2px -2px 10px black; font-size:20px;color: white; margin-left: 45%;"><?php
-      if(isset($_SESSION['msg'])){?>
-    
-        <?php
-
-        echo $_SESSION['msg'];
-        unset($_SESSION['msg']);
-
-      }?>
-      </div>
-      <br><br>
-  
-  <?php 
-  $id = $_SESSION['idUsuario'];
-    $sql_amizade = mysqli_query($conexao, "SELECT * FROM Solicitacoes_de_Amizade WHERE status = 'Aceito' and idDestinatario = $id" );
-    while($l_amizade = mysqli_fetch_array($sql_amizade)){
-      $id_convite = $l_amizade['idRemetente'];
-
-      $id_convidado = $l_amizade['idDestinatario'];
-      $id_status = $l_amizade['status'];
-
-    @$Usuario = $id_convite;
-    $sql_result = mysqli_query($conexao, "SELECT * FROM Usuario WHERE idUsuario like '%$Usuario%' ");
-
-    while($line = mysqli_fetch_array($sql_result)){
-      $id_pesquisa = $line['idUsuario'];
-      $nome_pesquisa = $line['nome'];
-      $img_pesquisa = $line['NomeImg'];
-      $nacio_pesquisa = $line['nacionalidade'];
-      $cidade_pesquisa = $line['cidade'];
-      $uf_pesquisa = $line['uf'];
-      $descricao_pesquisa = $line['descricao'];
-}
-          
-          if ( $nome_pesquisa != $Nome) {
+     <?php
  
-      ?> 
-          <div class="card">
-
-          <div class="header"> <?php echo $nome_pesquisa?> </div>
-
-         <?php if ( $nacio_pesquisa == "Americano") {
-          ?> 
-          <img src="../imagens/eua.png" class="photo1"> 
-        <?php  }elseif ($nacio_pesquisa == "Brasileiro") {?>
-          <img src="../imagens/brasil.png" class="photo1"> 
-          <?php  } ?>
-
-          <div class="photo"><img src="../foto/<?php echo $img_pesquisa?>" class="photo"></div>
-
-           <div class="content2">&nbsp;<img src="../imagens/local.png" style="width: 20px;"> &nbsp; &nbsp;Mora em <?php echo $cidade_pesquisa?>, no Estado de(a) <?php echo $uf_pesquisa?>.  </div>
-           
-          <div class="content3"> &nbsp;  &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;<?php echo $descricao_pesquisa?></div>
-
-        
-        <?php
-        echo "<a href='../Controllers/deleteAmigo.php?id=" . $id_convite ."'class='btn1' style='text-decoration: none;color: inherit; text-align: center; padding-top: 0.5%;'data-confirm='Tem certeza de que deseja excluir o item selecionado?'>Excluir Amigo</a><br>";
-        ?>
-       
+echo "<form class='form-inline my-2 my-lg-0' action='amigos.php' method='POST' style='display: flex; 
+  align-items:
+  center; justify-content: center;'>";
+  echo '<br><br>';
+echo "<input class='form-control mr-sm-2' type='search' placeholder='Pesquisar' aria-label='Pesquisar' name='pesquisa'>";
+echo "<button class='btn btn-outline-success my-2 my-sm-0' type='submit' value='Pesquisar'>Pesquisar</button>";
+ echo '<br><br>';
+echo "</form>";
+ echo '<br><br>';
+?>
         </div>
 
-  <br><br>
+          <?php
+            @$termo = $_POST['pesquisa'];
+            $id = $_SESSION['idUsuario'];
+            $sql_amizade = mysqli_query($conexao, "SELECT * FROM Solicitacoes_de_Amizade WHERE status = 'Aceito' ");
+          while($l_amizade = mysqli_fetch_array($sql_amizade)){
 
- <?php   }}
-  ?> <?php 
-  $id = $_SESSION['idUsuario'];
-    $sql_amizade = mysqli_query($conexao, "SELECT * FROM Solicitacoes_de_Amizade WHERE status = 'Aceito' and idRemetente = $id" );
-    while($l_amizade = mysqli_fetch_array($sql_amizade)){
-      $id_convite = $l_amizade['idRemetente'];
+          $id_convite = $l_amizade['idRemetente'];
+          $id_convidado =$l_amizade['idDestinatario'];
 
-      $id_convidado = $l_amizade['idDestinatario'];
-      $id_status = $l_amizade['status'];
+          if ($id_convite == $id) {
+           
+          @$Usuario = $id_convidado;
+        }
+        elseif ($id_convidado == $id) {
+          @$Usuario = $id_convite;
+        }
+    
+        
+       $sql_result = mysqli_query($conexao, "SELECT * FROM Usuario WHERE idUsuario like '%$Usuario%' and nome like '%$termo%' ");
 
-    @$Usuario = $id_convite;
-    $sql_result = mysqli_query($conexao, "SELECT * FROM Usuario WHERE idUsuario like '%$Usuario%' ");
-
-    while($line = mysqli_fetch_array($sql_result)){
-      $id_pesquisa = $line['idUsuario'];
+          while($line = mysqli_fetch_array($sql_result)){
+            $id_pesquisa = $line['idUsuario'];
+            $nome_pesquisa = $line['nome'];
+            $img_pesquisa = $line['NomeImg'];
+              $id_pesquisa = $line['idUsuario'];
       $nome_pesquisa = $line['nome'];
       $img_pesquisa = $line['NomeImg'];
       $nacio_pesquisa = $line['nacionalidade'];
       $cidade_pesquisa = $line['cidade'];
       $uf_pesquisa = $line['uf'];
       $descricao_pesquisa = $line['descricao'];
+
 }
-          if ( $nome_pesquisa != $Nome) {
- 
-      ?> 
-          <div class="card">
+          
+     
+            if (isset($id_pesquisa)){ 
+            if ($teste != $nome_pesquisa) {
+               
+            ?>
+      
+                  <div class="card">
 
           <div class="header"> <?php echo $nome_pesquisa?> </div>
 
@@ -147,24 +113,20 @@ $Nome = $_SESSION['nome'];
            <div class="content1">&nbsp;<img src="../imagens/local.png" style="width: 20px;"> &nbsp; &nbsp;Mora em <?php echo $cidade_pesquisa?>, no Estado de(a) <?php echo $uf_pesquisa?>.  </div>
            
           <div class="content"> &nbsp;  &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;<?php echo $descricao_pesquisa?></div>
-
+           
         
    <?php
         echo "<a href='../Controllers/deleteAmigo.php?id=" . $id_convite ."'class='btn1' style='text-decoration: none;color: inherit; text-align: center; padding-top: 0.5%;'data-confirm='Tem certeza de que deseja excluir o item selecionado?'>Excluir Amigo</a><br>";
-        ?>
-       
+       $teste = $nome_pesquisa; }   ?>
+        <br><br>
         </div>
+        
 
-  <br><br>
-
- <?php   }}
-  ?>
-     </div>
-   </div>
- 
+    <?php
+      }}?>
+   
+      </div>
     
-    </div>
-  </div>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
