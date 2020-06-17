@@ -96,6 +96,7 @@ echo "</form>";
             if ($teste != $nome_pesquisa) {
                
             ?>
+            <br><br><br>
       
                   <div class="card">
 
