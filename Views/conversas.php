@@ -45,6 +45,9 @@
         }
         elseif ($id_convidado == $id) {
           @$Usuario = $id_convite;
+        
+         }else {
+          @$Usuario  = '';
         }
     
         
@@ -58,7 +61,7 @@
           
      
             if (isset($id_pesquisa)){ 
-            if ($teste != $nome_pesquisa) {
+            if ($Nome != $nome_pesquisa) {
                
             ?>
             <div class="contato">
@@ -74,7 +77,7 @@
     
  
       <div class="mensagens">
-        teste2
+        
       </div>
     </div>
 </body>
