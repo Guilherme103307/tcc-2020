@@ -72,7 +72,10 @@ echo "</form>";
         }
         elseif ($id_convidado == $id) {
           @$Usuario = $id_convite;
+        }else {
+          @$Usuario  = '';
         }
+        
     
         
        $sql_result = mysqli_query($conexao, "SELECT * FROM Usuario WHERE idUsuario like '%$Usuario%' and nome like '%$termo%' ");
@@ -93,7 +96,7 @@ echo "</form>";
           
      
             if (isset($id_pesquisa)){ 
-            if ($teste != $nome_pesquisa) {
+            if ($Nome != $nome_pesquisa) {
                
             ?>
             <br><br><br>
