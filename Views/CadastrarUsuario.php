@@ -15,19 +15,16 @@
 
 
 	<div class="esquerda">
-		<?php
-			$id = $_GET['id'];  
-		?>
-		<img src ="../foto/<?php echo $id; ?>" class="img"  />
-
-
+			<form action="../Controllers/upload.php" method="POST" name="form1" enctype="multipart/form-data">
+				<img src="../foto/sem_perfil.png" class="img"></img>
+			   	<input type="file" name="arquivo" id="imagem" onchange="previsualizar()"class="upload"><br>
+				<label for="imagem" class="editar">[Editar Foto]</label><br><br>
+			        
+<fieldset class="field">
 	
-	
-    	<fieldset class="field">
-			<form action="../Controllers/controle_usuario.php?acao=inserir" method="POST">
-				<input  type="hidden" id="imagem" name="imagem" autofocus="" display= "inline"  value="<?php echo $id; ?>">
-			<h2 class="h2">Cadastre-se</h2>
 				
+			<h2 class="h2">Cadastre-se</h2>
+
 			<div> 
 				<label class="label">NOME</label>
 				<input type="text" name="nome" id="nome" autofocus="" class="form-control" style="width: 580px; margin-top: -10px" > 
@@ -92,6 +89,27 @@
 				<br>
 			</div>
 				</form>
+				<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		
+		<script>
+			function previsualizar(){
+				var imagem = document.form1.querySelector('input[name=arquivo]').files[0];
+				var preview = document.form1.querySelector('img');
+				
+				var reader = new FileReader();
+				
+				reader.onloadend = function () {
+					preview.src = reader.result;
+				}
+				
+				if(imagem){
+					reader.readAsDataURL(imagem);
+				}else{
+					preview.src = "";
+				}
+			}
+		</script>
+       
 			</div>
 			
 		</fieldset>
@@ -116,3 +134,4 @@
 	</div>
 </body>
 </html>
+
