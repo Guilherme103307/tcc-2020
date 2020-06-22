@@ -23,22 +23,12 @@
 			$_UP['erros'][4] = 'Não foi feito o upload do arquivo';
 	
 			if($_FILES['arquivo']['error'] != 0){
-				die("Não foi possivel fazer o upload, erro: <br />". $_UP['erros'][$_FILES['arquivo']['error']]);
+				die("Não foi possivel fazer o upload, erro: <br />". $_UP['erros'][$_FILES['file']['error']]);
 				exit; }
-			
-			$extensao = strtolower(end(explode('.', $_FILES['arquivo']['name'])));
-			if(array_search($extensao, $_UP['extensoes'])=== false){		
-				echo "
-					<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=http://localhost/poc-ingles/Views/CadastrarUsuario.php'>
-					<script type=\"text/javascript\">
-						alert(\"A imagem não foi cadastrada extesão inválida.\");
-					</script>
-				";
-			}
 			
 			else if ($_UP['tamanho'] < $_FILES['arquivo']['size']){
 				echo "
-					<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=http://localhost/poc-ingles/Views/CadastrarUsuario.php'>
+					<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=../views/CadastrarUsuario.php'>
 					<script type=\"text/javascript\">
 						alert(\"Arquivo muito grande.\");
 					</script>
@@ -57,20 +47,86 @@
 				
 				if(move_uploaded_file($_FILES['arquivo']['tmp_name'], $_UP['pasta']. $nome_final)){
 					
-					$query = mysqli_query($conexao, "INSERT INTO Img (
-					nome_imagem) VALUES('$nome_final')");
+					$foto=$nome_final;
+					
+			$nome=$_POST['nome'];
+			$email=$_POST['email'];
+			$uf=$_POST['uf'];
+			$cidade=$_POST['cidade'];
+			$senha=$_POST['senha'];
+			$tipo=$_POST['nacionalidade'];
+			$descricao=$_POST['descricao'];
+			
+
+		
+			if ($tipo==1) {
+
+				$nacionalidade = "Americano";
+				$sql="INSERT INTO Usuario (nome, email, senha, uf, cidade, nacionalidade, NomeIMG, descricao) VALUES ('$nome', '$email', '$senha','$uf', '$cidade', '$nacionalidade', '$foto', '$descricao');";
+				
+				$lala= mysqli_query($conexao, $sql);
+				
+				
+				$query = "SELECT * FROM Usuario WHERE email='$email' and senha='$senha';";
+				$verifica = mysqli_query($conexao,$query);
+				$row = mysqli_fetch_assoc($verifica);
+				$tipo = $row['nacionalidade'];
+
+				session_start();
+
+				$_SESSION['id']= $tipo;
 
 					
-					echo "
-						<script type=\"text/javascript\">
-							alert(\"Imagem cadastrada com Sucesso.\");
-						</script>
-					";	
-					 header("location: ../Views/CadastrarUsuario.php?id=".$nome_final." ");
+					$_SESSION['idUsuario'] = $row['idUsuario'];
+					$_SESSION['nome'] = $nome;
+					$_SESSION['email'] = $email;
+					$_SESSION['nacionalidade'] = $nacionalidade;
+					$_SESSION['uf'] = $uf;
+					$_SESSION['cidade'] = $cidade;
+					$_SESSION['senha'] = $senha;
+					$_SESSION['NomeIMG'] = $foto;
+					$_SESSION['descricao'] = $descricao;
+
+			
+						header("Location:../Views/homeB.php");
+				
+			}
+
+			if ($tipo==2) {
+
+				$nacionalidade = "Brasileiro";
+					$sql="INSERT INTO Usuario (nome, email, senha, uf, cidade, nacionalidade, NomeIMG, descricao) VALUES ('$nome', '$email', '$senha','$uf', '$cidade', '$nacionalidade', '$foto', '$descricao');";
+				$lala= mysqli_query($conexao, $sql);
+				
+				$query = "SELECT * FROM Usuario WHERE email='$email' and senha='$senha';";
+				$verifica = mysqli_query($conexao,$query);
+				$row = mysqli_fetch_assoc($verifica);
+				$tipo = $row['nacionalidade'];
+
+				session_start();
+
+				$_SESSION['id']= $tipo;
+
+				
+					$_SESSION['idUsuario'] = $row['idUsuario'];
+					$_SESSION['nome'] = $nome;
+					$_SESSION['email'] = $email;
+					$_SESSION['nacionalidade'] = $nacionalidade;
+					$_SESSION['uf'] = $uf;
+					$_SESSION['cidade'] = $cidade;
+					$_SESSION['senha'] = $senha;
+					$_SESSION['NomeIMG'] = $foto;
+					$_SESSION['descricao'] = $descricao;
+					
+			
+				header("Location:../Views/homeB.php");
+
+			}
+
 				}else{
 				
 					echo "
-						<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=http://localhost/poc-ingles/Views/CadastrarUsuario.php'>
+						<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=../Views/CadastrarUsuario.php'>
 						<script type=\"text/javascript\">
 							alert(\"Imagem não foi cadastrada com Sucesso.\");
 						</script>
