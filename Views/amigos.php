@@ -1,7 +1,14 @@
 <?php 
-	if (!isset($_SESSION)) session_start();
+
+  if (!isset($_SESSION)) session_start();
+
+  if(!isset ($_SESSION['email']) == true){
+
+    header("location: login.php");
+
+  } else {
 $Nome = $_SESSION['nome'];
-  $teste = '';
+  $teste = '';}
  ?>
 <!DOCTYPE html>
 <html>
@@ -97,6 +104,7 @@ echo "</form>";
      
             if (isset($id_pesquisa)){ 
             if ($Nome != $nome_pesquisa) {
+               if ($nome_pesquisa != $teste) {
                
             ?>
             <br><br><br>
@@ -120,8 +128,13 @@ echo "</form>";
            
         
    <?php
+   if($id_convidado == $_SESSION['idUsuario']){
         echo "<a href='../Controllers/deleteAmigo.php?id=" . $id_convite ."'class='btn1' style='text-decoration: none;color: inherit; text-align: center; padding-top: 0.5%;'data-confirm='Tem certeza de que deseja excluir o item selecionado?'>Excluir Amigo</a><br>";
-       $teste = $nome_pesquisa; }   ?>
+       $teste = $nome_pesquisa; }  
+       elseif ($id_convite == $_SESSION['idUsuario']) {
+          echo "<a href='../Controllers/deleteAmigo.php?id=" . $id_convidado ."'class='btn1' style='text-decoration: none;color: inherit; text-align: center; padding-top: 0.5%;'data-confirm='Tem certeza de que deseja excluir o item selecionado?'>Excluir Amigo</a><br>";
+       $teste = $nome_pesquisa; }  
+        }} ?>
         <br><br>
         </div>
         
