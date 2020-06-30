@@ -20,7 +20,7 @@ CREATE TABLE  Mensagens (
   idDestinatario INT NULL,
   texto VARCHAR(255) NULL,
   data DATE NULL,
-  horario TIME(6) NULL,
+  horario TIME(0) NULL,
   CONSTRAINT pk_idMensagens PRIMARY KEY (idMensagens),
   CONSTRAINT fk_Mensagens_Usuario 
     FOREIGN KEY (idRemetente)
