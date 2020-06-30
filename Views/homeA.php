@@ -1,6 +1,12 @@
 <?php 
+
   if (!isset($_SESSION)) session_start();
- ?>
+
+  if(!isset ($_SESSION['email']) == true){
+
+    header("location: login.php");
+
+  } ?>
 <!DOCTYPE html>
 <html>
   <head>
