@@ -1,8 +1,16 @@
 <?php 
-	if (!isset($_SESSION)) session_start();
+
+
+  if (!isset($_SESSION)) session_start();
+
+  if(!isset ($_SESSION['email']) == true){
+
+    header("location: login.php");
+
+  } else {
   include_once('../Controllers/conexao.php');
   $Nome = $_SESSION['nome'];
-  $teste = '';
+  $teste = '';}
  ?>
 <!DOCTYPE html>
 <html>
@@ -13,6 +21,7 @@
     <link rel="stylesheet" type="text/css" href="../css/conversas.css">
   	<link href="https://fonts.googleapis.com/css2?family=Biryani:wght@800&display=swap" rel="stylesheet">  
 	<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300&display=swap" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap" rel="stylesheet"> 
   </head>
   <body>
   <?php include_once("Header.php") ?>
@@ -20,11 +29,11 @@
     <div class="principal"> 
       <div class="pessoas">
         <div class="contato2">
-          <div class="pesquisar">
+           <div class="pesquisar">
             <?php 
               echo "<form class='form-inline my-2 my-lg-0' action='conversas.php' method='POST'>";
-              echo "<input type='search' style='border-bottom: solid; border-top: none; border-right: none; border-left: none; border-width: thin; border-color:  #E8E8E8; margin-left: 15%;' placeholder='Pesquisar' aria-label='Pesquisar' name='pesquisa'>";
-              echo "<button type='submit' value='Pesquisar' style='margin-left: 2%;'>🔎</button>";
+              echo "<input type='search' style='border-bottom: solid; border-top: none; border-right: none; border-left: none; border-width: thin; border-color:  #E8E8E8; margin-left: 8%;' placeholder='Pesquisar' aria-label='Pesquisar' name='pesquisa'>";
+              echo "<button type='submit' value='Pesquisar'>🔎</button>";
               echo "</form>";
             ?>
           </div>
@@ -61,23 +70,32 @@
           
      
             if (isset($id_pesquisa)){ 
+            if ($nome_pesquisa != $teste) {
             if ($Nome != $nome_pesquisa) {
-               
-            ?>
+        
+                
+            
+                echo "<a href='conversas1.php?id=" .$id_pesquisa ."' style='color: inherit; text-decoration: none;'>" ?>
+       
             <div class="contato">
+           
                 <div class="photo"><img src="../foto/<?php echo $img_pesquisa?>" class="photo"></div>
                 <div class="header"> <?php echo $nome_pesquisa?> </div>
-                <?php $teste = $nome_pesquisa; } ?>
-            </div>
+                <?php $teste = $nome_pesquisa; }?>
+                 </div>
 
+                </a>
+           
     <?php
-      }}?>
+      }}}?>
    
       </div>
     
  
       <div class="mensagens">
-        
+        <img src="../imagens/mensa.png" style="left:60%; top: 20%; position: absolute; display: grid; width: 200px">
+        <h3 style="left:60%;text-align: center; top: 55%; position: absolute; display: grid; font-family: 'Didact Gothic', sans-serif; font-size: 25px;">Suas Mensagens</h3>
+        <h4 style="left:46%; right: 8%; text-align: center; font-family: 'Didact Gothic', sans-serif;  top: 62%; position: absolute; display: grid; font-size:17px; color: #696969">Nesta página você pode enviar e receber mensagens dos seus amigos</h4>
       </div>
     </div>
 </body>
