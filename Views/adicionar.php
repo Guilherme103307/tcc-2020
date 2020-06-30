@@ -1,8 +1,16 @@
 <?php 
+
   if (!isset($_SESSION)) session_start();
+
+  if(!isset ($_SESSION['email']) == true){
+
+    header("location: login.php");
+
+  } else {
+    
 $Nome = $_SESSION['nome'];
 $idUser = $_SESSION['idUsuario'];
- ?>
+} ?>
 <!DOCTYPE html>
 <html>
   <head>
