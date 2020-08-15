@@ -64,7 +64,7 @@
 		<br>
 		</div>
 		<br>
-		 <label class="flex-box">Não Possui uma Conta? <a href="../Views/CarregarIMG.php"> Cadastre-se</a></label>
+		 <label class="flex-box">Não Possui uma Conta? <a href="../Views/CadastrarUsuario.php"> Cadastre-se</a></label>
 
 
     </div>
