@@ -9,5 +9,6 @@
 	
 
 	mysqli_query($conexao, $sql);
-		header("Location: ../views/adicionar.php");
+	$_SESSION['msge'] = $id_convidado;
+	header("Location: ../Views/Adicionar.php");
 ?>

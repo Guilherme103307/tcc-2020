@@ -26,7 +26,7 @@
 
 if ($status == '0') {
 		$_SESSION['msg'] = "<p style='color:red;'>Solicitação Recusada!!</p>";
-		header("Location: ../views/amigos.php");}
+		header("Location: ../Views/amigos.php");}
 
-		header("Location: ../views/amigos.php");
+		header("Location: ../Views/amigos.php");
 ?>

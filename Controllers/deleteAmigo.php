@@ -8,7 +8,7 @@
 	echo $idR;	
 	include_once("../Controllers/conexao.php");
 
-	mysqli_query($conexao, "UPDATE Solicitacoes_de_Amizade SET status = 'Excluido' WHERE idDestinatario = '$id' and idRemetente ='$idR' or  idDestinatario = '$idR' and idRemetente ='$id'");
+	mysqli_query($conexao, "DELETE FROM Solicitacoes_de_Amizade WHERE idDestinatario = '$id' and idRemetente = '$idR' or  idDestinatario = '$idR' and idRemetente ='$id'");
 
-		header("Location: ../views/amigos.php");
+		header("Location: ../Views/amigos.php");
 ?>

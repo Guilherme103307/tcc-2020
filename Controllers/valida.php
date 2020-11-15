@@ -33,7 +33,7 @@ include_once('conexao.php');
 						$_SESSION['descricao'] = $row['descricao'];
 
 
-						header("Location: ../Views/HomeA.php");
+						header("Location: ../Views/conta.php");
 					}
 				
 				} else if ($tipo== "Brasileiro") {
@@ -51,14 +51,14 @@ include_once('conexao.php');
 					$_SESSION['descricao'] = $row['descricao'];
 
 
-					header("Location: ../Views/HomeB.php");
+					header("Location: ../Views/conta.php");
 				}}
 			
 
 			 	else if (!isset($row)){
 			 		session_start();
 				 	$_SESSION['msg'] = "<p style='color:red;'>Usuário ou Senha Incorretos!!</p>";
-					header("Location: ../Views/Login.php");
+					header("Location: ../Views/login.php");
 				}
 				
 			

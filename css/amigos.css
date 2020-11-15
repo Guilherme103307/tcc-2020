@@ -42,18 +42,7 @@ margin-left: 10%;
   margin: 2%;
 
 }
-.photo1
-{
-  margin-top: 0%;
-  margin-left:20%;
-  border-radius: 200px;
-  width: 50px;
-  height: 50px;
-  z-index: 1;
-  box-shadow: 0px 0px 10px black;
 
- 
-}
 .content1
 {
   margin-top: 5%;
@@ -131,3 +120,15 @@ margin-left: 10%;
 
 
 
+.texto
+{
+    color: #000;
+    font-family: 'Jost', sans-serif;
+    display: inline;
+   align-items: center;
+    justify-content: center;
+    position: absolute;
+    font-size: 5vw;
+    margin-top: 7%;
+    margin-left: 20%;
+}

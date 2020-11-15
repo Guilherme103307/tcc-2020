@@ -18,21 +18,47 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>HEAVEN</title>
-       
-    <?php echo "   <meta http-equiv='refresh' content='10;' url='conversas1.php?id=" .$idConversa."' > " ?>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="../css/conversas.css">
+      <title>HEAVEN - Chat</title>
+    <link rel="sortcut icon" href="../imagens/favicon.png" type="image/gif" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>HEAVEN</title>
+
+    <!-- Bootstrap -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Biryani:wght@800&display=swap" rel="stylesheet">  
-  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300&display=swap" rel="stylesheet"> 
-<link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap" rel="stylesheet"> 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  </head>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300&display=swap" rel="stylesheet"> 
+     <link rel="stylesheet" type="text/css" href="../css/conversas2.css">
+
+</head>
   <body>
-  <?php include_once("Header.php") ?>
-  
+<header>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarCollapse" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                 <img src="../imagens/Logo.png" style="width: 100px; float: left;" >
+                <a href="#" class="navbar-brand">HEAVEN</a>
+            </div>
+            <div id="navbarCollapse" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="conta.php"  class="active">Conta</a></li>
+                    <li><a href="amigos.php">Adicionar Amigos</a></li>
+                    <li><a href="Conversas.php">Conversas</a></li>
+                    <li><a href="login.php">Sair</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+  <center>
     <div class="principal"> 
       <div class="pessoas">
         <div class="contato2">
@@ -116,14 +142,17 @@
             $img_conversa = $result['NomeImg'];
 
           }?>
-          <div class="cabecalho">
+          <div class="cabecalho"> 
               <img src="../foto/<?php echo $img_conversa?>" class="photo1">&nbsp;&nbsp;&nbsp;<?php echo $nome_conversa?> 
+            <?php
+              echo "<a href='../Controllers/videoCall.php?id=" . $id_conversa." style='float: right; margin-left:50px;'><img src='../imagens/call.png'></a>";
+        ?>
           </div>
           <div>
-            <br><br>
+          <br><br><br><br>
             <?php
             
-                $sql_result = mysqli_query($conexao, "SELECT * FROM mensagens WHERE idDestinatario like '%$idConversa%' and idRemetente like '%$User%' or idDestinatario like '%$User%' and idRemetente like '%$idConversa%'");
+                $sql_result = mysqli_query($conexao, "SELECT * FROM Mensagens WHERE idDestinatario like '%$idConversa%' and idRemetente like '%$User%' or idDestinatario like '%$User%' and idRemetente like '%$idConversa%'");
 
           while($line = mysqli_fetch_array($sql_result)){
             $idMensagem = $line['idMensagens'];
@@ -132,18 +161,18 @@
             $hora = $line['horario'];
             $idDestinatario = $line['idDestinatario'];
             if ($idDestinatario == $User) {?>
-              <p>
+            
                 <div style="float: left; border-radius: 20px;
   border: none;
   height: 40px;
-  background-color: #00BFFF;padding-left: 2%;
+  background-color: #00BFFF;padding-left: -1%;
   padding-right: 2%;
-  padding-top: 1%;
+padding-top: 1%;
   font-size: 15px; margin-left: 2%" >
-    <ul id="nav"> 
+    <ul id="nav" style="list-style: none;"> 
  
     <li> <?php echo $texto; ?> 
-      <ul class="ul2"> 
+      <ul class="ul2" style="list-style: none;"> 
         <li class="li1">Data: <?php echo $data; ?> </li> 
         <li  class="li1">Hora: <?php echo $hora; ?></li> 
 
@@ -174,7 +203,7 @@
 </script>
             
             </div>
-            <br><br>
+        <br><br>
             </p>
            <?php } 
             if ($idDestinatario == $idConversa) {?>
@@ -188,11 +217,13 @@
   padding-right: 2%;
   padding-top: 1%;
   font-size: 15px;
+  display: block;
+  text-align: center !important;
   margin-right: 2%; border-color: #E8E8E8;" >
-            <ul id="nav"> 
+            <ul id="nav" style="list-style: none;"> 
  
     <li><?php echo $texto; ?>
-      <ul class="ul1"> 
+      <ul class="ul1" style="list-style: none;"> 
         <li class="li1">Data: <?php echo $data; ?></li> 
         <li  class="li1">Hora: <?php echo $hora; ?></li> 
       <?php echo  "<li class='li1'><a href='../Controllers/apagarmensagem.php?id=".$idMensagem."&idC=".$idConversa."'>Apagar Mensagem</a></li>  "?>
@@ -233,8 +264,8 @@
                 divMensagem.scrollTop = divMensagem.scrollHeight;
         });
         </script>
-          <div class="rodape">
-            <form method="POST" action="../Controllers/chat.php">
+          <div class="rodape" style="position: fixed; ">
+            <form method="POST" action="../Controllers/conversas.php"  style="display: inline;">
               <input type="hidden" name="idConversa" value="<?php echo $idConversa?>">
               <input type="text" name="mensagem" class="text">
               <button type="submit" class="btn"><img src="../imagens/enviar.png"></button>
@@ -242,5 +273,16 @@
           </div>
       </div>
     </div>
+    </center>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <script src="../js/personalizado.js"></script>   
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../js/bootstrap.min.js"></script>
 </body>
 </html>

@@ -1,6 +1,18 @@
-body
+.video
 {
-	margin: 0;
-	padding: 0;
-
+	align-self: center;
+	position: absolute;
+	display: flex;
+	top: 13%;
+	bottom: 4%;
+	left: 20%;
+	right: 4%;
+	border-style: solid;
+	border-radius: 2px;
+	border-width: thin;
+ 	padding-bottom: 0.625em;
+  	border: 2px groove (internal value);
+  	background-color: white;
+  	border-color: #E8E8E8;
+  	font-family: 'Didact Gothic', sans-serif;
 }

@@ -15,24 +15,52 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>HEAVEN</title>
+    <title>HEAVEN - Chat</title>
+    <link rel="sortcut icon" href="../imagens/favicon.png" type="image/gif" />
     <meta charset="utf-8">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="../css/conversas.css">
-  	<link href="https://fonts.googleapis.com/css2?family=Biryani:wght@800&display=swap" rel="stylesheet">  
-	<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300&display=swap" rel="stylesheet"> 
-<link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap" rel="stylesheet"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../css/conversas.css">
+   <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Biryani:wght@800&display=swap" rel="stylesheet">  
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300&display=swap" rel="stylesheet">
+
+      <link href="../css/bootstrap.min.css" rel="stylesheet">
   </head>
   <body>
-  <?php include_once("Header.php") ?>
+</head>
+  <body>
+<header>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarCollapse" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                 <img src="../imagens/Logo.png" style="width: 100px; float: left;" >
+                <a href="#" class="navbar-brand">HEAVEN</a>
+            </div>
+            <div id="navbarCollapse" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="conta.php"  class="active">Conta</a></li>
+                    <li><a href="amigos.php">Adicionar Amigos</a></li>
+                    <li><a href="Conversas.php">Conversas</a></li>
+                    <li><a href="login.php">Sair</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
   
-    <div class="principal"> 
-      <div class="pessoas">
+    <div class="principal row "> 
+      <div class="pessoas col-12 col-md-3 col-lg-3">
         <div class="contato2">
            <div class="pesquisar">
             <?php 
-              echo "<form class='form-inline my-2 my-lg-0' action='conversas.php' method='POST'>";
-              echo "<input type='search' style='border-bottom: solid; border-top: none; border-right: none; border-left: none; border-width: thin; border-color:  #E8E8E8; margin-left: 8%;' placeholder='Pesquisar' aria-label='Pesquisar' name='pesquisa'>";
+              echo "<form class='form-inline my-2 my-lg-0' action='conversas.php' style='display: flex;'method='POST'>";
+              echo "<input type='search' style='border-bottom: solid; border-top: none; border-right: none; border-left: none; border-width: thin; border-color:  #E8E8E8;' placeholder='Pesquisar' aria-label='Pesquisar' name='pesquisa'>";
               echo "<button type='submit' value='Pesquisar'>🔎</button>";
               echo "</form>";
             ?>
@@ -92,11 +120,21 @@
       </div>
     
  
-      <div class="mensagens">
-        <img src="../imagens/mensa.png" style="left:60%; top: 20%; position: absolute; display: grid; width: 200px">
-        <h3 style="left:60%;text-align: center; top: 55%; position: absolute; display: grid; font-family: 'Didact Gothic', sans-serif; font-size: 25px;">Suas Mensagens</h3>
-        <h4 style="left:46%; right: 8%; text-align: center; font-family: 'Didact Gothic', sans-serif;  top: 62%; position: absolute; display: grid; font-size:17px; color: #696969">Nesta página você pode enviar e receber mensagens dos seus amigos</h4>
+      <div class="mensagens col-0 col-md-12 col-lg-12">
+        <img src="../imagens/mensa.png" style=" display: flex; width: 200px; margin-left:auto; margin-right: auto; margin-top: 10rem;">
+        <h3 style="text-align: center;font-family: 'Didact Gothic', sans-serif; font-size: 25px;">Suas Mensagens</h3>
+        <h4 style=" text-align: center; font-family: 'Didact Gothic', sans-serif;  font-size:17px; color: #696969">Nesta página você pode enviar e receber mensagens dos seus amigos. Antes de começar uma conversa, você deve ter Amigos adicionados. Por isso, antes de tudo, procure seu correspondente na aba Adicionar Amigos!</h4>
       </div>
     </div>
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <script src="../js/personalizado.js"></script>   
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../js/bootstrap.min.js"></script>
 </body>
 </html>

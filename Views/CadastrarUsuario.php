@@ -4,14 +4,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Cadastro</title>
+	<title>HEAVEN - Cadastro</title>
+	
+	<link rel="sortcut icon" href="../imagens/favicon.png" type="image/gif" />
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="../css/Cadastro.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="
 	anonymous">
 	<link href="https://fonts.googleapis.com/css2?family=Biryani:wght@800&display=swap" rel="stylesheet"> <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300&display=swap" rel="stylesheet"> 
-</head> 
-<body style="background-color: #FFF5EE;">
+	<link rel="stylesheet" media="(max-width: 640px)" href="../css/CadastroCel.css">
+	<link rel="stylesheet" media="(min-width: 640px)" href="../css/Cadastro.css">
+</head>
+<body style="background-color: #FFF5EE;overflow-x: none ">
 
 
 	<div class="esquerda">
@@ -19,64 +23,57 @@
 				<img src="../foto/sem_perfil.png" class="img"></img>
 			   	<input type="file" name="arquivo" id="imagem" onchange="previsualizar()"class="upload"><br>
 				<label for="imagem" class="editar">[Editar Foto]</label><br><br>
-			        
-<fieldset class="field">
+			  <center>  
+<fieldset class="field" >
 	
-				
-			<h2 class="h2">Cadastre-se</h2>
+			<h2 class="h2">Cadastro</h2>
 
-			<div> 
-				<label class="label">NOME</label>
-				<input type="text" name="nome" id="nome" autofocus="" class="form-control" style="width: 580px; margin-top: -10px" > 
-				<br>
-			</div>
-			
-			<div>
-				<label class="label">EMAIL</label>
-				<input type="text" name="email" id="email" placeholder="exemplo@gmail.com" class="form-control" style="width: 580px; margin-top: -10px" >
-				<br>
-			</div>
-			<div class="left">
-				<label class="label">NACIONALIDADE</label>
-				<select class="form-control" name="nacionalidade" style="text-align: center; width: 280px; margin-top: -10px; background-color: #FFF5EE;"  id="nacionalidade"> 
+    <div class="form-group col-md-10 col-12 col-lg-10" >
+      <label for="inputAddress">Nome:</label>
+      <input type="text" class="form-control x" id="nome" name="nome" required="" placeholder="Nome Completo" required>
+    </div>
+
+    <div class="form-group col-md-10 col-12 col-lg-10">
+      <label for="inputEmail4">Email:</label>
+      <input type="email" class="form-control" name="email" id="email" placeholder="exemplo@gmail.com"  required style="background-color: #FFF5EE;">
+    </div>
+	<div   class="form-group  col-md-10 col-12 col-lg-10 form-display">
+		<div class="form-group  col-md-6 col-12 col-lg-6 form-right">
+	      <label for="inputPassword4">Senha:</label>
+	      <input type="password" name="senha" id="senha" class="form-control" placeholder="Minimo de 6 caracters"   minlength="6" required>
+	    </div>
+	   
+	    <div class="form-group  col-md-6 col-12 col-lg-6 form-right">
+	      <label for="inputPassword4">Cidade:</label>
+	      <input type="text" name="cidade"  id="cidade" class="form-control" placeholder="Sua Cidade" required>
+	    </div>
+	</div>
+
+	<div   class="form-group  col-md-10 col-12 col-lg-10 form-display">
+ <div class="form-group  col-md-6 col-12 col-lg-6 form-right">
+      <label for="inputPassword4">UF:</label>
+      <input type="text" name="uf"id="uf" class="form-control" placeholder="Seu Estado" required>
+    </div>    
+
+    <div class="form-group  col-md-6 col-12 col-lg-6 form-right"  >
+      
+      <label for="inputPassword4">Nacionalidade:</label>
+     
+				<select class="form-control" name="nacionalidade" style=" background-color: #FFF5EE;"  id="nacionalidade"> 
 					<option value="1">Americano</option>
 					<option value="2">Brasileiro</option>
 				
 				</select>
-				<br>
-			</div>
-			
-			<div class="right" >
+    </div> 
+</div>
+    <center>
+      <div class="form-group  col-md-10 col-12 col-lg-10 form-right">
+    <label for="exampleFormControlTextarea1">Descrição</label>
+    <textarea class="form-control col-md-12" id="exampleFormControlTextarea1" name="descricao"rows="1" style="background-color: transparent;" placeholder="Uma breve Descrição sobre você, sua profissão, seus gostos e hobbies." required></textarea>
+     <br><br>
+  </div>
 				
-				<label class="label">CIDADE</label>
-				<input type="text" name="cidade" id="cidade" placeholder="Cidade" style="width: 280px; margin-top: -10px; margin-right: 30px;" class="form-control" >
-				<br>
-				
-			</div>
-
-			<div class="left">
-				
-				
-				<label class="label">ESTADO</label>
-				<input type="text" name="uf" id="uf" placeholder="Estado" style="width: 280px; margin-top: -10px" class="form-control" >
-			</div>
-			
-		
-			<div  class="right"> 
-
-				<label class="label">SENHA</label>
-				<input type="password" name="senha" id="senha" placeholder="minimo 8 caractries" class="form-control" style="width: 280px; margin-top: -10px; margin-right: 30px;"  >
-				<br>
-			</div>
-			<div> 
-				<br>
-				<label class="label">DESCRIÇÃO</label>
-				<input type="text" name="descricao" id="descricao" autofocus="" class="form-control" style="width: 580px; margin-top: -10px; height: 100px;" placeholder="Ex: Sua Profissão, idade, coisas que gosta de fazer no tempo livre, hobbies, etc;"> 
-				<br>
-			</div>
-			<div>
-				<br><br>
-				<button type="submit" class="btn" style="background-color:#000 ;
+				<button  type="submit" class="btn" style="background-color:#000 ;
 					color: white;
 					text-decoration: none;
 					 border-radius: 2px;
@@ -84,7 +81,8 @@
 					 border: none;
 					 width: 200px;
 					 height:  35px;
-	 				margin-left: 30%;
+					 margin-left: -3%;
+	 			
  					"	 >Salvar</button>
 				<br>
 			</div>
@@ -111,10 +109,9 @@
 		</script>
        
 			</div>
-			
+			</center>
 		</fieldset>
 	</div>
-
 
 	<div class="direita">
 		<div>
@@ -126,11 +123,16 @@
 			<div>
 
 				<h3 class="h3" style="font-size: 20px; text-align: center; margin-left: 15%; width: 80%;">Pratique seu segundo idioma com um estrangeiro, conheça mais sobre a cultura e os custumes e ainda faça novos amigos. </h3>
-				<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+				<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 			
 			</div>
 		</div>
 		
 	</div>
+	
+</center>    
+
+
 </body>
 </html>
+

@@ -63,7 +63,7 @@
 					$_SESSION['descricao'] = $descricao;
 
 			
-						header("Location:../Views/homeB.php");
+						header("Location:../Controllers/email.php");
 			}
 
 			if ($tipo==2) {
@@ -93,7 +93,7 @@
 					$_SESSION['descricao'] = $descricao;
 					
 			
-				header("Location:../Views/homeB.php");
+				header("Location:../Controllers/email.php");
 
 			}
 		}
@@ -161,7 +161,7 @@
 					$_SESSION['descricao'] = $descricao;
 
 			
-						header("Location:../Views/homeB.php");
+					header("Location:../Controllers/email.php");
 				
 			}
 
@@ -192,7 +192,7 @@
 					$_SESSION['descricao'] = $descricao;
 					
 			
-				header("Location:../Views/homeB.php");
+				header("Location:../Controllers/email.php");
 
 			}
 
